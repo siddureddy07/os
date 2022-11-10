@@ -1,0 +1,214 @@
+# Program to check if number is even or odd 
+
+#!/bin/bash  
+echo -n "Enter a number:"  
+read n  
+echo -n "RESULT: " 
+if [ `expr $n % 2` == 0 ]  
+then 
+echo "$n is Even" 
+else  
+echo "$n is Odd" 
+fi 
+
+
+ 
+
+# Program to show grade based on CGPA 
+
+#!/bin/bash  
+echo "Enter CGPA: " 
+read n  
+echo "Grade: " 
+if [ $n -eq 10 ] 
+then  
+echo "A+" 
+elif [ $n -eq 9 ] 
+then  
+echo "A"  
+elif [ $n -eq 8 ]  
+then  
+echo "B"  
+elif [ $n -eq 7 ]  
+then  
+echo "C"  
+else  
+echo "D"  
+fi 
+
+ 
+
+#To find greatest of 3 integer 
+
+#!/bin/bash 
+
+echo "Enter three Integers:"  
+
+read a b c  
+
+if [ $a -gt $b -a $a -gt $c ]  
+
+then  
+
+echo "$a is Greatest"  
+
+elif [ $b -gt $c -a $b -gt $a ]  
+
+then  
+
+echo "$b is Greatest"  
+
+else  
+
+echo "$c is Greatest!"  
+
+fi 
+
+ 
+
+#Print Numbers in Reverse Order 
+
+#!/bin/bash 
+
+ i=5  
+
+while test $i != 0  
+
+do  
+
+echo "$i "  
+
+i=`expr $i - 1` 
+
+ 
+
+# Reverse of a Number 
+
+#!/bin/bash  
+
+echo "Enter a number"  
+
+read n  
+
+sd=0  
+
+rev=0  
+
+while [ $n -gt 0 ]  
+
+do 
+
+ sd=$(( $n % 10 ))  
+
+rev=$(( $rev * 10 + $sd ))  
+
+n=$(( $n / 10 ))  
+
+done 
+
+echo "Reversed Number: $rev" 
+
+ 
+
+#Sum of digits 
+
+#!/bin/bash  
+
+echo "Enter Number: "  
+
+read n  
+
+sum=0  
+
+while [ $n -gt 0 ]  
+
+do r=$(expr $n % 10)  
+
+sum=$(expr $sum + $r)  
+
+n=$(expr $n / 10)  
+
+done  
+
+echo "Sum: $sum" 
+
+ 
+
+#To print No. of lines from a given file 
+
+#!/bin/bash  
+
+echo "Enter Number of Lines from Beginning:” 
+
+read h  
+
+echo "Enter Number of Lines from End: " 
+
+read t  
+
+echo "Enter File Name: "  
+
+read q  
+
+head -n $h $q  
+
+tail -n $t $q 
+
+ 
+
+# Lisiting the files and deleting 
+
+#!/bin/bash  
+
+longlist=`ls -l`  
+
+echo "Long List of Files: 
+
+$longlist" hiddenlist=`ls -a -a`  
+
+echo "Long List With Hidden Files: $hiddenlist"  
+
+del=`rm test1`  
+
+echo "Deleting File: $del"  
+
+while true  
+
+do  
+
+read -r -p 'Do you want to continue? ' choice  
+
+case "$choice" in 
+
+n|N) break;;  
+
+y|Y) echo "Continue";; 
+
+ *) echo 'Invalid Response';;  
+
+esac  
+
+done  
+
+done 
+
+Filters 
+
+ 
+
+Enter Data Same as Below(Using Vi Command) 1;John;Los_Angeles;California;29;Aug;Male;174;96;4 2;Max;Chicago;Illinois;45;Jan;Male;189;87;2 3;Samantha;Houston;Texas;25;Jul;Female;185;110;4 4;Penelope;Phoenix;Arizona;48;Sep;Female;195;104;3 5;Henry;Fort_Worth;Texas;35;Apr;Male;149;61;3 6;William;San_Francisco;California;37;Apr;Male;189;104;3 7;Scott;Las_Vegas;Nevada;39;May;Male;147;92;5 8;James;Miami;Florida;26;Oct;Male;154;111;5 9;Jason;Oakland;California;40;Feb;Male;174;90;3 10;Megan;Cincinnati;Ohio;24;Nov;Female;169;103;4 
+
+ 
+
+Q1. sort -t";" -k3 table Q2. sort -t";" -k4 table Q3. sort -t";" -k10 table 
+
+Q4. sort -t";" -k33 -k44 table Q5. cut -d";" -f1,2,5,7,10 table 
+
+Q6. Cut -d”;” -f2 table | tr a-z A-Z Q7. sort -t";" -k5 table 
+
+Q8. sort -t";" -M -k6 table > Personnel_data_month2022.dat Q9. cut -d”;” -f2f table | grep -e S -e J > SJ_Names.txt 
+
+Q10. Cut -d”;” -f2,3,4,5 table | sort ‘t”;” -k1 > capital 
+
+ 
+
