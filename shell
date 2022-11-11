@@ -21,3 +21,37 @@ else
 fi
 
 done
+
+
+siddu@SiddharthReddy:~/endsem$ cat  forloop.sh
+#!bin/bash
+
+for file in ./*
+do
+        if [ -d "$file" ]
+        then
+                echo "$file is direc"
+        elif [ -f "$file" ]
+        then
+                echo "$file is a file"
+        fi
+done
+siddu@SiddharthReddy:~/endsem$ cat menu.sh
+#!bin/bash
+
+echo "options"
+echo "1. Todays date"
+echo "2.number of users"
+echo "3.list of all files"
+echo "4.display current dir"
+
+read num
+if [ $num -eq 1 ]
+then
+        d=`date`
+        echo $d
+fi
+num=`who | wc -l`
+echo $num
+ls
+pwd
